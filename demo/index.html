@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Welcome screen</title>
+	 <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+		<div class="container">
+		  <div class="item"  id="first">
+		      <div class="wrapper">
+		          <div class="box"> 1</div>
+		          <div class="box" id="mid"> 2</div>
+		          <div class="box">3</div>
+		          <div class="box" id="four">4</div>
+		          <div class="box">5</div>
+		          <div class="box">6</div>
+		          <a href="/1" class="box"> 7</a>
+		          <div class="box">8</div>
+		      </div>
+		  </div>
+		  <!-- <div class="item"> </div> -->
+		  <div class="right">
+		    <button id="one">Open</button>
+		    <button id="two">Close</button>
+		  </div>
+		</div>
+
+	<div class="container-grid">
+	    <div class="col-1"> </div>
+	    <div class="col-5"> </div>
+	     <div class="col-1"> </div>
+	     <div class="col-5"> </div>
+	</div>
+	<script type="text/javascript">
+		document.querySelector('#one').addEventListener('click', ()=> {
+		document.querySelector('#first').style.width = "60%";
+		});
+
+		document.querySelector('#two').addEventListener('click', ()=> {
+				document.querySelector('#first').style.width = "0%";
+		});
+	</script>
+</body>
+</html>
