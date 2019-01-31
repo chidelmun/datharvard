@@ -1,11 +1,11 @@
 var express = require('express');
-var bodyParser = require('body-parser');
 var path = require('path');
+const PORT = process.env.PORT || 5000
 
 var app = express();
 
 app.use(express.static(path.join(__dirname, 'demo')));
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
     console.log('App running on port 5000....');
 })
