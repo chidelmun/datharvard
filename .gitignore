@@ -8,7 +8,7 @@ npm-debug.log
 .DS_Store
 
 *.css
-
+demo/css/*.css
 # Docker
 Dockerfile
 docker-compose.yml
