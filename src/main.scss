@@ -75,7 +75,7 @@ body{
 .wrapper {
   display: grid;
   grid-template-columns: 40% 20% 40%;
- grid-auto-rows: minmax(100px, auto);
+ grid-auto-rows: minmax(200px, auto);
   width: 100%;
   grid-gap: 5px;
 }
