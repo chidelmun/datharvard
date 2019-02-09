@@ -1,10 +1,53 @@
-$color: teal;
-$primary-color: green;
-
+@import "preset";
 body{
 	margin: 10px  10px;
 	padding: 10px 10px;
-	background: $color;
+	@include backgroundColor;
+}
+%color-scale{
+  color: rebeccapurple;
+}
+
+%message-container {
+  @extend %color-scale;
+  width: 200px;
+  height: 100px;
+  background-color: transparent;
+}
+
+aside[role="main"]{
+  @extend %message-container;
+  background-color: orangered;
+  border: 2px solid green;
+}
+
+a[href="http://google.com"]{
+  text-decoration: none;
+  font-size: 42px;
+  color: blue;
+}
+
+div {
+    p{
+      font-style: italic;
+      font-size: 2em;
+      color: white;
+    }
+}
+
+.success{
+  @extend %message-container;
+  border: 2px solid red;
+}
+
+.error{
+  @extend %message-container;
+  border: 2px solid red;
+}
+
+.warning{
+  @extend %message-container;
+  border: 2px solid orange;
 }
 
 .container-grid{
@@ -118,3 +161,4 @@ button{
 	cursor: pointer;
 
 }
+

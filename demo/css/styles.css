@@ -1,7 +1,46 @@
 body {
   margin: 10px 10px;
   padding: 10px 10px;
-  background: teal;
+  background-color: #660000;
+}
+
+.warning, .error, .success, aside[role=main] {
+  color: rebeccapurple;
+}
+
+.warning, .error, .success, aside[role=main] {
+  width: 200px;
+  height: 100px;
+  background-color: transparent;
+}
+
+aside[role=main] {
+  background-color: orangered;
+  border: 2px solid green;
+}
+
+a[href="http://google.com"] {
+  text-decoration: none;
+  font-size: 42px;
+  color: blue;
+}
+
+div p {
+  font-style: italic;
+  font-size: 2em;
+  color: white;
+}
+
+.success {
+  border: 2px solid red;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.warning {
+  border: 2px solid orange;
 }
 
 .container-grid {

@@ -1,0 +1,6 @@
+$color: red;
+$primary-color: green;
+
+@mixin backgroundColor {
+    background-color: darken($color, 30);
+}
