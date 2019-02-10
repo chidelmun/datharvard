@@ -1,6 +1,15 @@
-$color: red;
-$primary-color: green;
+body{
+  margin: 0;
+  padding: 0;
+  background: azure;
+}
 
-@mixin backgroundColor {
-    background-color: darken($color, 30);
+ul{
+  list-style: none;
+  display: inline-block;
+}
+
+ul li:hover {
+  background-color: rebeccapurple;
+  color: white;
 }
