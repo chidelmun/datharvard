@@ -37,6 +37,7 @@ header section div.content p {
 }
 header section div.content div.controlButtons {
   padding-top: 45px;
+  padding-bottom: 45px;
 }
 header section div.content div.controlButtons button {
   width: 130px;
@@ -47,6 +48,7 @@ header section div.content div.controlButtons button {
   font-weight: 100;
   font-family: sans-serif;
   color: white;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */
