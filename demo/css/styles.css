@@ -1,21 +1,52 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0em;
+  padding: 0em;
   background: azure;
 }
 
-ul {
-  list-style: none;
-  display: inline-block;
+header section {
+  background: teal;
+  height: 10px;
+  padding-top: 17px;
 }
-
-ul li:hover {
+header section nav.sitenav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color: #cccccc;
+}
+header section nav.sitenav strong:hover {
+  cursor: pointer;
+  color: #333333;
+}
+header section div.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1549778399-f94fd24d4697?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80");
+  background-repeat: no-repeat;
+}
+header section div.content:first-child {
+  padding-top: 25px;
+}
+header section div.content p {
+  text-align: center;
+}
+header section div.content div.controlButtons {
+  padding-top: 45px;
+}
+header section div.content div.controlButtons button {
+  width: 130px;
+  height: 45px;
   background-color: rebeccapurple;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 100;
+  font-family: sans-serif;
   color: white;
-}
-
-.content {
-  padding: 1.5em;
 }
 
 /*# sourceMappingURL=styles.css.map */
