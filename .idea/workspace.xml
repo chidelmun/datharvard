@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdfb77ab-4308-492f-8fd1-d8db2f67e9d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/demo/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/demo/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/demo/css/styles.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -29,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="47" column="25" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="25" />
+            <state relative-caret-position="156">
+              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -137,7 +135,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11157000" />
+    <option name="totallyTimeSpent" value="11304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -223,8 +221,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="25" />
+        <state relative-caret-position="156">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
         </state>
       </provider>
     </entry>
