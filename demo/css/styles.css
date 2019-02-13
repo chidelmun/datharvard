@@ -6,8 +6,8 @@ body {
 
 header section {
   background: teal;
-  height: 10px;
-  padding-top: 17px;
+  height: 30px;
+  padding-top: 20px;
 }
 header section nav.sitenav {
   display: flex;
@@ -24,7 +24,7 @@ header section div.content {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-image: url("https://images.unsplash.com/photo-1549778399-f94fd24d4697?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80");
   background-repeat: no-repeat;
