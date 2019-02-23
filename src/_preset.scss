@@ -3,7 +3,8 @@ $colors: (
         primary-theme-complement: complement(hsla(194, 100%, 23%, 1)),
         footer-bg: #427d8f,
         footer-text-color: #FFF6BB,
-        theme-button-colors: purple
+        theme-button-colors: purple,
+        header-color: hsla(48, 24%, 43%, 1)
 );
 
 @function getColor($color-name) {
@@ -45,4 +46,11 @@ button{
     cursor: pointer;
     color: #FFF6BB;
   }
+}
+h1,h2,h3,h4,h5,h6 {
+  color: getColor(header-color);
+}
+
+p, strong{
+  color: lighten(getColor(header-color), 20%);
 }

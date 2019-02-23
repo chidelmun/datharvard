@@ -34,7 +34,7 @@ body{
           &:hover{
             color: lighten(getColor(footer-text-color), 10%);
           }
-
+          ont-size: 1.5em;
         }
       }
     }
@@ -54,30 +54,110 @@ body{
         background-color: transparent;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         text-align: center;
+        margin-bottom: 50px;
+        border: 1px solid white;
+        padding-bottom: 66px;
         @extend  %header-theme;
+        h2{
+          font-size: 3em;
+        }
       }
 
       .site-info-content {
         grid-area: jumb-content;
-        width: 98%;
+        width: 100%;
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 70% 29%;
         grid-template-rows: minmax(400px, auto);
         grid-gap: 15px;
         grid-template-areas: "left-content right-content";
         border: 1px solid darkgrey;
 
         .site-left-content{
-            grid-area: left-content;
-            background-color: transparent;
+          grid-area: left-content;
+          background-color: transparent;
+          display: grid;
+          width: 102%;
+          grid-template-columns: 50% 50%;
+          grid-template-rows: 18% auto 14%;
+          grid-template-areas: "top-left top-left" "middle-left middle-right" "bottom-left bottom-left";
+
+          .top-left-banner-content {
+            grid-area: top-left;
+            width: 100%;
+            background-color: #fffdee;
+            display: grid;
+            grid-template-columns: 15% 85%;
+            grid-template-rows: 100%;
+            grid-template-areas: "left-area right-area";
+            align-items: baseline;
+            .right-paragraph{
+              grid-area: right-area;
+              width: 100%;
+            }
+            .what-new{
+              grid-area: left-area;
+              width: 100%;
+              padding-left: 12px;
+            }
+          }
+
+          .left-content {
+            display: flex;
+            flex-direction: column;
+            grid-area: middle-left;
+            div.bg{
+              width: 100%;
+              height: 100%;
+              background: transparent;
+              button {
+                @extend button;
+                width: 200px;
+                height: 60px;
+              }
+            }
+            h1{
+              font-size: 2.5em;
+            }
+          }
+
+          .left-bottom{
+            grid-area: middle-right;
+            background-color: lighten(red, 50%);
+          }
+
+          .bottom-banner-content {
+            background: darken(grey, 10%);
+            grid-area: bottom-left;
+            display: grid;
+            grid-template-columns: 50% 48%;
+            [class$="-dsh"] {
+              display: flex;
+              flex-direction: column;
+              padding-left: 12px;
+              strong{
+                font-size: 24px;
+              }
+            }
+          }
+
         }
 
         .site-right-content{
           grid-area: right-content;
-          background-color: pink;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          input {
+            width: 70%;
+            height: 2.5rem;
+            font-size: 1.5rem;
+            font-weight: 100;
+          }
         }
 
       }
@@ -99,6 +179,7 @@ body{
         [class$="-card-item"] {
           width: 100%;
           padding: 0 12px;
+          border-right: 3px solid #8a9292;
           img{
             width: 100%;
             height: 60%;

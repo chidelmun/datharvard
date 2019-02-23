@@ -12,15 +12,23 @@ body, html {
   height: 100%;
 }
 
-button {
+button, body div.site-container .site-main-content .site-info-content .site-left-content .left-content div.bg button {
   height: 30px;
   width: 124px;
   font-size: 1em;
   background-color: purple;
 }
-button:hover {
+button:hover, body div.site-container .site-main-content .site-info-content .site-left-content .left-content div.bg button:hover {
   cursor: pointer;
   color: #FFF6BB;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #887d53;
+}
+
+p, strong {
+  color: #b7ae8a;
 }
 
 body {
@@ -54,6 +62,7 @@ body div.site-container .site-navigation nav {
 }
 body div.site-container .site-navigation nav strong {
   cursor: pointer;
+  ont-size: 1.5em;
 }
 body div.site-container .site-navigation nav strong:hover {
   color: #fffdee;
@@ -73,15 +82,21 @@ body div.site-container .site-main-content .site-banner {
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
+  margin-bottom: 50px;
+  border: 1px solid white;
+  padding-bottom: 66px;
+}
+body div.site-container .site-main-content .site-banner h2 {
+  font-size: 3em;
 }
 body div.site-container .site-main-content .site-info-content {
   grid-area: jumb-content;
-  width: 98%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 70% 29%;
   grid-template-rows: minmax(400px, auto);
   grid-gap: 15px;
   grid-template-areas: "left-content right-content";
@@ -90,10 +105,78 @@ body div.site-container .site-main-content .site-info-content {
 body div.site-container .site-main-content .site-info-content .site-left-content {
   grid-area: left-content;
   background-color: transparent;
+  display: grid;
+  width: 102%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 18% auto 14%;
+  grid-template-areas: "top-left top-left" "middle-left middle-right" "bottom-left bottom-left";
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content {
+  grid-area: top-left;
+  width: 100%;
+  background-color: #fffdee;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 100%;
+  grid-template-areas: "left-area right-area";
+  align-items: baseline;
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content .right-paragraph {
+  grid-area: right-area;
+  width: 100%;
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content .what-new {
+  grid-area: left-area;
+  width: 100%;
+  padding-left: 12px;
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .left-content {
+  display: flex;
+  flex-direction: column;
+  grid-area: middle-left;
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .left-content div.bg {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .left-content div.bg button {
+  width: 200px;
+  height: 60px;
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .left-content h1 {
+  font-size: 2.5em;
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .left-bottom {
+  grid-area: middle-right;
+  background-color: white;
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .bottom-banner-content {
+  background: #676767;
+  grid-area: bottom-left;
+  display: grid;
+  grid-template-columns: 50% 48%;
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .bottom-banner-content [class$=-dsh] {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+}
+body div.site-container .site-main-content .site-info-content .site-left-content .bottom-banner-content [class$=-dsh] strong {
+  font-size: 24px;
 }
 body div.site-container .site-main-content .site-info-content .site-right-content {
   grid-area: right-content;
-  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body div.site-container .site-main-content .site-info-content .site-right-content input {
+  width: 70%;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 100;
 }
 body div.site-container .site-main-content .site-horizontal-section {
   grid-area: bottom-section;
@@ -109,6 +192,7 @@ body div.site-container .site-main-content .site-horizontal-section {
 body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] {
   width: 100%;
   padding: 0 12px;
+  border-right: 3px solid #8a9292;
 }
 body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] img {
   width: 100%;
