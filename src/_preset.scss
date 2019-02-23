@@ -1,6 +1,48 @@
-body{
-  margin: 0em;
-  padding: 0em;
-  background: azure;
+$colors: (
+        primary-theme: hsla(194, 100%, 23%, 1),
+        primary-theme-complement: complement(hsla(194, 100%, 23%, 1)),
+        footer-bg: #427d8f,
+        footer-text-color: #FFF6BB,
+        theme-button-colors: purple
+);
+
+@function getColor($color-name) {
+  @return map-get($colors, $color-name)
 }
 
+%header-theme {
+  background-color: #427d8f;
+  color: #FFF6BB;
+}
+
+%footer-theme {
+  background-color: getColor(footer-bg);
+  color: getColor(footer-text-color);
+}
+
+$padding: 15px;
+$borders: 15px;
+
+
+$desktop: 840px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+body, html {
+  height: 100%;
+}
+
+button{
+  height: 30px;
+  width: 124px;
+  font-size: 1em;
+  background-color: getColor(theme-button-colors);
+  &:hover{
+    cursor: pointer;
+    color: #FFF6BB;
+  }
+}

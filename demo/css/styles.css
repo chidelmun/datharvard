@@ -1,55 +1,129 @@
-body {
-  margin: 0em;
-  padding: 0em;
-  background: azure;
+body div.site-container .site-main-content .site-banner, body div.site-container .site-navigation nav {
+  background-color: #427d8f;
+  color: #FFF6BB;
 }
 
-header section {
-  background: teal;
-  height: 30px;
-  padding-top: 20px;
+body div.site-container .site-footer {
+  background-color: #427d8f;
+  color: #FFF6BB;
 }
-header section nav.sitenav {
+
+body, html {
+  height: 100%;
+}
+
+button {
+  height: 30px;
+  width: 124px;
+  font-size: 1em;
+  background-color: purple;
+}
+button:hover {
+  cursor: pointer;
+  color: #FFF6BB;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #005a75;
+  position: absolute;
+  z-index: -1;
+}
+body div.site-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: 50px auto 80px;
+  grid-template-areas: "nav-bar nav-bar" "site-body site-body" "site-footer site-footer";
+  margin: 0 0;
+  grid-gap: 5px;
+}
+body div.site-container .site-navigation {
+  grid-area: nav-bar;
+  background-color: #427d8f;
+  border: 1px solid darkgrey;
+}
+body div.site-container .site-navigation nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  color: #cccccc;
+  justify-content: space-evenly;
+  padding-top: 12px;
 }
-header section nav.sitenav strong:hover {
+body div.site-container .site-navigation nav strong {
   cursor: pointer;
-  color: #333333;
 }
-header section div.content {
+body div.site-container .site-navigation nav strong:hover {
+  color: #fffdee;
+}
+body div.site-container .site-main-content {
+  grid-area: site-body;
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: 500px auto 400px;
+  grid-template-areas: "banner-ad banner-ad" "jumb-content jumb-content" "bottom-section bottom-section";
+  background-color: transparent;
+  margin: 0 0.5em;
+  grid-gap: 0.75em;
+}
+body div.site-container .site-main-content .site-banner {
+  grid-area: banner-ad;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  background-image: url("https://images.unsplash.com/photo-1549778399-f94fd24d4697?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80");
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-header section div.content:first-child {
-  padding-top: 25px;
-}
-header section div.content p {
   text-align: center;
 }
-header section div.content div.controlButtons {
-  padding-top: 45px;
-  padding-bottom: 45px;
+body div.site-container .site-main-content .site-info-content {
+  grid-area: jumb-content;
+  width: 98%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: minmax(400px, auto);
+  grid-gap: 15px;
+  grid-template-areas: "left-content right-content";
+  border: 1px solid darkgrey;
 }
-header section div.content div.controlButtons button {
-  width: 130px;
-  height: 45px;
-  background-color: rebeccapurple;
-  border-radius: 30px;
-  font-size: 17px;
-  font-weight: 100;
-  font-family: sans-serif;
-  color: white;
-  cursor: pointer;
+body div.site-container .site-main-content .site-info-content .site-left-content {
+  grid-area: left-content;
+  background-color: transparent;
+}
+body div.site-container .site-main-content .site-info-content .site-right-content {
+  grid-area: right-content;
+  background-color: pink;
+}
+body div.site-container .site-main-content .site-horizontal-section {
+  grid-area: bottom-section;
+  background-color: transparent;
+  border: 1px solid darkgrey;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 100%;
+  grid-gap: 12px;
+  justify-items: center;
+  justify-content: center;
+}
+body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] {
+  width: 100%;
+  padding: 0 12px;
+}
+body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] img {
+  width: 100%;
+  height: 60%;
+  max-width: 96%;
+}
+body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] * {
+  padding: 0 12px;
+}
+body div.site-container .site-footer {
+  grid-area: site-footer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
