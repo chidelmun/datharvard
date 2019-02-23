@@ -1,0 +1,21 @@
+/**
+Global classes
+ */
+
+
+.text-danger {
+  color: red;
+}
+
+@keyframes anouncer-ad {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+[banner-anouncer-ad]{
+  animation: anouncer-ad 2s;
+}

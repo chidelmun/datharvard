@@ -1,10 +1,13 @@
+@import "globals";
+
 $colors: (
         primary-theme: hsla(194, 100%, 23%, 1),
         primary-theme-complement: complement(hsla(194, 100%, 23%, 1)),
         footer-bg: #427d8f,
         footer-text-color: #FFF6BB,
         theme-button-colors: purple,
-        header-color: hsla(48, 24%, 43%, 1)
+        header-color: hsla(48, 24%, 43%, 1),
+        danger-color: hsl(340, 80%, 20%)
 );
 
 @function getColor($color-name) {
