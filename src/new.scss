@@ -61,6 +61,9 @@ body{
         margin-top:9em;
         grid-area: banner-ad;
         div.arrow-more {
+          @include mobile {
+            display: none;
+          }
           clip-path: polygon(29% 0, 70% 0, 71% 50%, 100% 50%, 53% 100%, 0 50%, 30% 50%);
           background-color: red;
           width: $arrow-size;

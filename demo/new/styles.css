@@ -133,6 +133,11 @@ body div.site-container .site-main-content div.left-panel div.arrow-more {
   height: 65px;
   cursor: pointer;
 }
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content div.left-panel div.arrow-more {
+    display: none;
+  }
+}
 body div.site-container .site-main-content div.left-panel div.arrow-more:hover {
   background-color: #FFF6BB;
 }
