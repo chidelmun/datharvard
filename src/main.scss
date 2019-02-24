@@ -207,6 +207,56 @@ body{
   }
 }
 
+/**
+  * Mobile breakpoint
+ */
+
+@media only screen and (max-width: 820px) {
+
+    div.site-container {
+      section.site-main-content {
+        display: flex;
+        flex-direction: column;
+        div.site-info-content {
+          display: flex;
+          flex-direction: column;
+          div.site-left-content {
+            display: flex;
+            flex-direction: column;
+            div.left-content {
+              padding-bottom: 12px;
+              text-align: center;
+            }
+            div.top-left-banner-content {
+              grid-template-columns: 26% 65%;
+            }
+          }
+
+          div.site-right-content {
+            padding-bottom: 12px;
+            input {
+              margin: 12px 0;
+            }
+          }
+        }
+
+        div.site-right-content {
+
+        }
+
+        div.site-horizontal-section {
+          display: flex;
+          flex-direction: column;
+          [class$="-card-item"] {
+            width: 100%;
+            padding: 0 0;
+          }
+        }
+      }
+    }
+
+}
+
 //body {
 //  font-family: 'Montserrat';
 //  margin: 0;

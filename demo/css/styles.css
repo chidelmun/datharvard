@@ -231,4 +231,43 @@ body div.site-container .site-footer {
   align-items: center;
 }
 
+/**
+  * Mobile breakpoint
+ */
+@media only screen and (max-width: 820px) {
+  div.site-container section.site-main-content {
+    display: flex;
+    flex-direction: column;
+  }
+  div.site-container section.site-main-content div.site-info-content {
+    display: flex;
+    flex-direction: column;
+  }
+  div.site-container section.site-main-content div.site-info-content div.site-left-content {
+    display: flex;
+    flex-direction: column;
+  }
+  div.site-container section.site-main-content div.site-info-content div.site-left-content div.left-content {
+    padding-bottom: 12px;
+    text-align: center;
+  }
+  div.site-container section.site-main-content div.site-info-content div.site-left-content div.top-left-banner-content {
+    grid-template-columns: 26% 65%;
+  }
+  div.site-container section.site-main-content div.site-info-content div.site-right-content {
+    padding-bottom: 12px;
+  }
+  div.site-container section.site-main-content div.site-info-content div.site-right-content input {
+    margin: 12px 0;
+  }
+  div.site-container section.site-main-content div.site-horizontal-section {
+    display: flex;
+    flex-direction: column;
+  }
+  div.site-container section.site-main-content div.site-horizontal-section [class$=-card-item] {
+    width: 100%;
+    padding: 0 0;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
