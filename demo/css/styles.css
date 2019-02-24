@@ -1,5 +1,5 @@
 /**
-Global classes
+Global style rules
  */
 .text-danger {
   color: red;
@@ -15,6 +15,10 @@ Global classes
 }
 [banner-anouncer-ad] {
   animation: anouncer-ad 2s;
+}
+
+a {
+  text-decoration: none;
 }
 
 body div.site-container .site-main-content .site-banner, body div.site-container .site-navigation nav {
@@ -46,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #887d53;
 }
 
-p, strong {
+p, strong, a {
   color: #b7ae8a;
 }
 
@@ -96,6 +100,12 @@ body div.site-container .site-main-content {
   margin: 0 0.5em;
   grid-gap: 0.75em;
 }
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content {
+    display: flex;
+    flex-direction: column;
+  }
+}
 body div.site-container .site-main-content .site-banner {
   grid-area: banner-ad;
   background-color: transparent;
@@ -121,6 +131,12 @@ body div.site-container .site-main-content .site-info-content {
   grid-template-areas: "left-content right-content";
   border: 1px solid darkgrey;
 }
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-info-content {
+    display: flex;
+    flex-direction: column;
+  }
+}
 body div.site-container .site-main-content .site-info-content .site-left-content {
   grid-area: left-content;
   background-color: transparent;
@@ -129,6 +145,12 @@ body div.site-container .site-main-content .site-info-content .site-left-content
   grid-template-columns: 50% 50%;
   grid-template-rows: 18% auto 14%;
   grid-template-areas: "top-left top-left" "middle-left middle-right" "bottom-left bottom-left";
+}
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-info-content .site-left-content {
+    display: flex;
+    flex-direction: column;
+  }
 }
 body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content {
   grid-area: top-left;
@@ -140,9 +162,19 @@ body div.site-container .site-main-content .site-info-content .site-left-content
   grid-template-areas: "left-area right-area";
   align-items: baseline;
 }
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content {
+    grid-template-columns: 26% 65%;
+  }
+}
 body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content .right-paragraph {
   grid-area: right-area;
   width: 100%;
+}
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content .right-paragraph {
+    padding-left: 12px;
+  }
 }
 body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content .what-new {
   grid-area: left-area;
@@ -153,6 +185,14 @@ body div.site-container .site-main-content .site-info-content .site-left-content
   display: flex;
   flex-direction: column;
   grid-area: middle-left;
+}
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-info-content .site-left-content .left-content {
+    padding-bottom: 12px;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 body div.site-container .site-main-content .site-info-content .site-left-content .left-content div.bg {
   width: 100%;
@@ -196,11 +236,22 @@ body div.site-container .site-main-content .site-info-content .site-right-conten
   justify-content: space-evenly;
   align-items: center;
 }
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-info-content .site-right-content {
+    padding-bottom: 12px;
+  }
+}
 body div.site-container .site-main-content .site-info-content .site-right-content input {
   width: 70%;
   height: 2.5rem;
   font-size: 1.5rem;
   font-weight: 100;
+  background-color: #fffcef;
+}
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-info-content .site-right-content input {
+    margin: 12px 0;
+  }
 }
 body div.site-container .site-main-content .site-horizontal-section {
   grid-area: bottom-section;
@@ -213,10 +264,22 @@ body div.site-container .site-main-content .site-horizontal-section {
   justify-items: center;
   justify-content: center;
 }
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-horizontal-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
 body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] {
   width: 100%;
   padding: 0 12px;
   border-right: 3px solid #8a9292;
+}
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] {
+    width: 100%;
+    padding: 0 0;
+  }
 }
 body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] img {
   width: 100%;
@@ -235,50 +298,6 @@ body div.site-container .site-footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-/**
-  * Mobile breakpoint
- */
-@media only screen and (max-width: 820px) {
-  div.site-container section.site-main-content {
-    display: flex;
-    flex-direction: column;
-  }
-  div.site-container section.site-main-content div.site-info-content {
-    display: flex;
-    flex-direction: column;
-  }
-  div.site-container section.site-main-content div.site-info-content div.site-left-content {
-    display: flex;
-    flex-direction: column;
-  }
-  div.site-container section.site-main-content div.site-info-content div.site-left-content div.left-content {
-    padding-bottom: 12px;
-    text-align: center;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  div.site-container section.site-main-content div.site-info-content div.site-left-content div.top-left-banner-content {
-    grid-template-columns: 26% 65%;
-  }
-  div.site-container section.site-main-content div.site-info-content div.site-left-content div.top-left-banner-content div.right-paragraph {
-    padding-left: 12px;
-  }
-  div.site-container section.site-main-content div.site-info-content div.site-right-content {
-    padding-bottom: 12px;
-  }
-  div.site-container section.site-main-content div.site-info-content div.site-right-content input {
-    margin: 12px 0;
-  }
-  div.site-container section.site-main-content div.site-horizontal-section {
-    display: flex;
-    flex-direction: column;
-  }
-  div.site-container section.site-main-content div.site-horizontal-section [class$=-card-item] {
-    width: 100%;
-    padding: 0 0;
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */

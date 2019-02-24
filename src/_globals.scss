@@ -19,3 +19,21 @@ Global style rules
 [banner-anouncer-ad]{
   animation: anouncer-ad 2s;
 }
+
+a{
+  text-decoration: none;
+}
+
+
+@keyframes blink {
+    0%{
+      background-color: transparent;
+    }
+  100%{
+    background-color: #FFF6BB;
+  }
+}
+
+[blink] {
+  animation: blink 1s infinite;
+}
