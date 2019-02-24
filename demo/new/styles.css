@@ -148,7 +148,7 @@ body div.site-container .site-main-content div.right-panel {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 30%);
-  grid-template-rows: max-content;
+  grid-template-rows: auto;
   grid-gap: 3em;
   justify-content: center;
 }
