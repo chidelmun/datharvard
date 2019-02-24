@@ -24,11 +24,6 @@ $colors: (
   color: getColor(footer-text-color);
 }
 
-$padding: 15px;
-$borders: 15px;
-
-
-$desktop: 840px;
 
 @mixin desktop {
   @media (min-width: #{$desktop}) {
@@ -41,8 +36,8 @@ body, html {
 }
 
 button{
-  height: 30px;
-  width: 124px;
+  height: 48px;
+  width: 178px;
   font-size: 1em;
   background-color: getColor(theme-button-colors);
   &:hover{
