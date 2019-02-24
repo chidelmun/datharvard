@@ -171,6 +171,11 @@ body div.site-container .site-main-content .site-info-content .site-left-content
 body div.site-container .site-main-content .site-info-content .site-left-content .left-bottom {
   grid-area: middle-right;
   background-color: white;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 body div.site-container .site-main-content .site-info-content .site-left-content .bottom-banner-content {
   background: #676767;
@@ -250,9 +255,14 @@ body div.site-container .site-footer {
   div.site-container section.site-main-content div.site-info-content div.site-left-content div.left-content {
     padding-bottom: 12px;
     text-align: center;
+    justify-content: flex-start;
+    align-items: center;
   }
   div.site-container section.site-main-content div.site-info-content div.site-left-content div.top-left-banner-content {
     grid-template-columns: 26% 65%;
+  }
+  div.site-container section.site-main-content div.site-info-content div.site-left-content div.top-left-banner-content div.right-paragraph {
+    padding-left: 12px;
   }
   div.site-container section.site-main-content div.site-info-content div.site-right-content {
     padding-bottom: 12px;
