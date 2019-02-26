@@ -1,10 +1,6 @@
 /**
 Global style rules
  */
-.text-danger {
-  color: red;
-}
-
 @keyframes anouncer-ad {
   0% {
     transform: scale(0.5);
@@ -19,6 +15,18 @@ Global style rules
 
 a {
   text-decoration: none;
+}
+
+@keyframes blink {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #FFF6BB;
+  }
+}
+[blink] {
+  animation: blink 1s infinite;
 }
 
 body div.site-container .site-main-content .site-banner, body div.site-container .site-navigation nav {
@@ -45,6 +53,11 @@ button:hover, body div.site-container .site-main-content .site-info-content .sit
   cursor: pointer;
   color: #FFF6BB;
 }
+@media only screen and (max-width: 820px) {
+  button, body div.site-container .site-main-content .site-info-content .site-left-content .left-content div.bg button {
+    margin: 12px 0;
+  }
+}
 
 h1, h2, h3, h4, h5, h6 {
   color: #887d53;
@@ -52,6 +65,15 @@ h1, h2, h3, h4, h5, h6 {
 
 p, strong, a {
   color: #b7ae8a;
+  font-size: 20px;
+}
+
+.light-text {
+  color: #b7ae8a;
+}
+
+.text-danger {
+  color: #2e0513;
 }
 
 body {
@@ -155,7 +177,7 @@ body div.site-container .site-main-content .site-info-content .site-left-content
 body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content {
   grid-area: top-left;
   width: 100%;
-  background-color: #fffdee;
+  background: #00465c;
   display: grid;
   grid-template-columns: 15% 85%;
   grid-template-rows: 100%;
@@ -170,6 +192,7 @@ body div.site-container .site-main-content .site-info-content .site-left-content
 body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content .right-paragraph {
   grid-area: right-area;
   width: 100%;
+  text-align: left;
 }
 @media only screen and (max-width: 820px) {
   body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content .right-paragraph {
@@ -218,7 +241,7 @@ body div.site-container .site-main-content .site-info-content .site-left-content
   align-items: center;
 }
 body div.site-container .site-main-content .site-info-content .site-left-content .bottom-banner-content {
-  background: #676767;
+  background: #00465c;
   grid-area: bottom-left;
   display: grid;
   grid-template-columns: 50% 48%;

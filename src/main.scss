@@ -103,7 +103,7 @@ body{
           .top-left-banner-content {
             grid-area: top-left;
             width: 100%;
-            background-color: #fffdee;
+            background: darken(map_get($colors, primary-theme), 5%);
             display: grid;
             grid-template-columns: 15% 85%;
             grid-template-rows: 100%;
@@ -115,6 +115,7 @@ body{
             .right-paragraph{
               grid-area: right-area;
               width: 100%;
+              text-align: left;
               @include mobile {
                 padding-left: 12px;
               }
@@ -164,7 +165,7 @@ body{
           }
 
           .bottom-banner-content {
-            background: darken(grey, 10%);
+            background: darken(map_get($colors, primary-theme), 5%);
             grid-area: bottom-left;
             display: grid;
             grid-template-columns: 50% 48%;
@@ -173,7 +174,6 @@ body{
               flex-direction: column;
               padding-left: 12px;
               text-align: center;
-
             }
           }
 

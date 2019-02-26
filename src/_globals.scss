@@ -2,10 +2,7 @@
 Global style rules
  */
 
-
-.text-danger {
-  color: red;
-}
+$mobileBreakPoint: 820px;
 
 @keyframes anouncer-ad {
   0% {
@@ -36,4 +33,10 @@ a{
 
 [blink] {
   animation: blink 1s infinite;
+}
+
+@mixin mobile {
+  @media only screen and (max-width:  #{$mobileBreakPoint})  {
+    @content;
+  }
 }
