@@ -297,6 +297,7 @@ body div.site-container .site-main-content .site-horizontal-section [class$=-car
   width: 100%;
   padding: 0 12px;
   border-right: 3px solid #8a9292;
+  padding-top: 10px;
 }
 @media only screen and (max-width: 820px) {
   body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] {
