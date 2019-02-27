@@ -76,6 +76,10 @@ p, strong, a {
   color: #2e0513;
 }
 
+span {
+  color: #d29779;
+}
+
 body {
   margin: 0;
   height: 100%;

@@ -62,3 +62,14 @@ p, strong, a{
 }
 
 
+@function setColor($colorValue) {
+  @if(hue($colorValue) - hue(map_get($colors, primary-theme)) < 0 ) {
+    @return hsl(hue($colorValue) - 100, 50%, 65%);
+  } @else {
+     @return hsl(hue($colorValue) + 100, 50%, 65%);
+  }
+}
+
+span {
+  color: setColor(green);
+}
