@@ -1,0 +1,75 @@
+@import "globals";
+
+$colors: (
+        primary-theme: hsl(194, 100%, 23%),
+        primary-theme-complement: complement(hsla(194, 100%, 23%, 1)),
+        footer-bg: #427d8f,
+        footer-text-color: #FFF6BB,
+        theme-button-colors: purple,
+        header-color: hsla(48, 24%, 43%, 1),
+        danger-color: hsl(340, 80%, 20%),
+);
+
+$arrow-size: 65px;
+
+@function getColor($color-name) {
+  @return map-get($colors, $color-name)
+}
+
+%header-theme {
+  background-color: #427d8f;
+  color: #FFF6BB;
+}
+
+%footer-theme {
+  background-color: getColor(footer-bg);
+  color: getColor(footer-text-color);
+}
+
+
+body, html {
+  height: 100%;
+}
+
+button{
+  height: 48px;
+  width: 178px;
+  font-size: 1em;
+  background-color: getColor(theme-button-colors);
+  &:hover{
+    cursor: pointer;
+    color: #FFF6BB;
+  }
+  @include mobile {
+    margin: 12px 0;
+  }
+}
+h1,h2,h3,h4,h5,h6 {
+  color: getColor(header-color);
+}
+
+p, strong, a{
+  color: lighten(getColor(header-color), 20%);
+  font-size: 20px;
+}
+
+.light-text {
+  color: lighten(map-get($colors, header-color), 20%);
+}
+
+.text-danger {
+  color: darken(map_get($colors, danger-color), 10%);
+}
+
+
+@function setColor($colorValue) {
+  @if(hue($colorValue) - hue(map_get($colors, primary-theme)) < 0 ) {
+    @return hsl(hue($colorValue) - 100, 50%, 65%);
+  } @else {
+     @return hsl(hue($colorValue) + 100, 50%, 65%);
+  }
+}
+
+span {
+  color: setColor(green);
+}

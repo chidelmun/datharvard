@@ -1,0 +1,257 @@
+@import "preset";
+
+body{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: getColor(primary-theme);
+  position: absolute;
+  z-index: -1;
+
+  div.site-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 50px auto 80px;
+    grid-template-areas: "nav-bar nav-bar" "site-body site-body" "site-footer site-footer";
+    margin: 0 0;
+    grid-gap: 5px;
+
+    .site-navigation {
+      grid-area: nav-bar;
+      background-color: #427d8f;
+      border: 1px solid darkgrey;
+
+      nav{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-top: 12px;
+        @extend  %header-theme;  // class header-theme won't be created. acts line an interface for other to inherit from
+        strong {
+          cursor: pointer;
+          &:hover{
+            color: lighten(getColor(footer-text-color), 10%);
+          }
+          ont-size: 1.5em;
+        }
+      }
+    }
+
+    .site-main-content {
+      grid-area: site-body;
+      display: grid;
+      grid-template-columns: 30% auto;
+      grid-template-rows: 500px auto 400px;
+      grid-template-areas: "banner-ad banner-ad" "jumb-content jumb-content" "bottom-section bottom-section";
+      background-color: transparent;
+      margin: 0 0.5em;
+      grid-gap: 0.75em;
+
+      @include mobile{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .site-banner {
+        grid-area: banner-ad;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 50px;
+        border: 1px solid white;
+        padding-bottom: 66px;
+        @extend  %header-theme;
+        h2{
+          font-size: 3em;
+        }
+      }
+
+      .site-info-content {
+        grid-area: jumb-content;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 70% 29%;
+        grid-template-rows: minmax(400px, auto);
+        grid-gap: 15px;
+        grid-template-areas: "left-content right-content";
+        border: 1px solid darkgrey;
+
+        @include mobile{
+          display: flex;
+          flex-direction: column;
+        }
+
+        .site-left-content{
+          grid-area: left-content;
+          background-color: transparent;
+          display: grid;
+          width: 102%;
+          grid-template-columns: 50% 50%;
+          grid-template-rows: 18% auto 14%;
+          grid-template-areas: "top-left top-left" "middle-left middle-right" "bottom-left bottom-left";
+
+          @include mobile{
+            display: flex;
+            flex-direction: column;
+          }
+
+          .top-left-banner-content {
+            grid-area: top-left;
+            width: 100%;
+            background: darken(map_get($colors, primary-theme), 5%);
+            display: grid;
+            grid-template-columns: 15% 85%;
+            grid-template-rows: 100%;
+            grid-template-areas: "left-area right-area";
+            align-items: baseline;
+            @include mobile{
+              grid-template-columns: 26% 65%;
+            }
+            .right-paragraph{
+              grid-area: right-area;
+              width: 100%;
+              text-align: left;
+              @include mobile {
+                padding-left: 12px;
+              }
+            }
+            .what-new{
+              grid-area: left-area;
+              width: 100%;
+              padding-left: 12px;
+            }
+          }
+
+          .left-content {
+            display: flex;
+            flex-direction: column;
+            grid-area: middle-left;
+            @include mobile{
+              padding-bottom: 12px;
+              text-align: center;
+              justify-content: flex-start;
+              align-items: center;
+            }
+            div.bg{
+              width: 100%;
+              height: 100%;
+              background: transparent;
+              display: flex;
+              justify-content: center;
+              button {
+                @extend button;
+                width: 200px;
+                height: 60px;
+              }
+            }
+            h1{
+              font-size: 2.5em;
+            }
+          }
+
+          .left-bottom{
+            grid-area: middle-right;
+            background-color: lighten(#fffcef, 50%);
+            height: 20em;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+          }
+
+          .bottom-banner-content {
+            background: darken(map_get($colors, primary-theme), 5%);
+            grid-area: bottom-left;
+            display: grid;
+            grid-template-columns: 50% 48%;
+            [class$="-dsh"] {
+              display: flex;
+              flex-direction: column;
+              padding-left: 12px;
+              text-align: center;
+            }
+          }
+
+        }
+
+        .site-right-content{
+          grid-area: right-content;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          @include mobile {
+            padding-bottom: 12px;
+          }
+          input {
+            width: 70%;
+            height: 2.5rem;
+            font-size: 1.5rem;
+            font-weight: 100;
+            background-color: #fffcef;
+            @include mobile {
+              margin: 12px 0;
+            }
+          }
+        }
+
+      }
+
+
+      .site-horizontal-section {
+        grid-area: bottom-section;
+        background-color: transparent;
+        border: 1px solid darkgrey;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 100%;
+        grid-gap: 12px;
+        justify: {
+          items: center;
+          content: center;
+        }
+        @include mobile {
+          display: flex;
+          flex-direction: column;
+        }
+
+        [class$="-card-item"] {
+          width: 100%;
+          padding: 0 12px;
+          border-right: 3px solid #8a9292;
+          padding-top: 10px;
+          @include mobile {
+            width: 100%;
+            padding: 0 0;
+          }
+          img{
+            width: 100%;
+            height: 60%;
+            max-width: 96%;
+          }
+          *{
+            padding: 0 12px;
+          }
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+
+    .site-footer {
+      grid-area: site-footer;
+      @extend  %footer-theme;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@import "preset";
+
+
+body{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: getColor(primary-theme);
+  position: absolute;
+  z-index: -1;
+
+  div.site-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 50px auto 80px;
+    grid-template-areas: "nav-bar nav-bar" "site-body site-body" "site-footer site-footer";
+    margin: 0 0;
+    grid-gap: 5px;
+
+    .site-navigation {
+      grid-area: nav-bar;
+      background-color: #427d8f;
+      border: 1px solid darkgrey;
+
+      nav{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-top: 12px;
+        @extend  %header-theme;  // class header-theme won't be created. acts line an interface for other to inherit from
+        strong {
+          cursor: pointer;
+          &:hover{
+            color: lighten(getColor(footer-text-color), 10%);
+          }
+          ont-size: 1.5em;
+        }
+      }
+    }
+
+    .site-main-content {
+      grid-area: site-body;
+      display: grid;
+      grid-template-columns: 30% auto;
+      grid-template-rows: 500px auto;
+      grid-template-areas: "banner-ad banner-ad" "jumb-content jumb-content";
+      background-color: transparent;
+      margin: 0 0.5em;
+      grid-gap: 0.75em;
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+      }
+      div.left-panel{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top:9em;
+        grid-area: banner-ad;
+        div.arrow-more {
+          @include mobile {
+            display: none;
+          }
+          clip-path: polygon(29% 0, 70% 0, 71% 50%, 100% 50%, 53% 100%, 0 50%, 30% 50%);
+          background-color: red;
+          width: $arrow-size;
+          height: $arrow-size;
+          cursor: pointer;
+          &:hover{
+            background-color: #FFF6BB;
+          }
+        }
+        input{
+          width: 75%;
+          height: 3.5rem;
+          font-size: 1.5rem;
+          text-align: center;
+          @include mobile {
+            height: 2.5rem;
+          }
+        }
+      }
+
+      div.right-panel {
+        @include mobile {
+          display: flex;
+          flex-direction: column;
+        }
+        background-color: darken(map_get($colors, primary-theme), 5%);
+        grid-area: jumb-content;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        grid-template-rows: auto;
+        grid-gap: 3em;
+        justify-content: center;
+        [class$="-panel-item"] {
+          cursor: pointer;
+          padding-top: 12px;
+          img{
+            width: 100%;
+            height: 81%;
+          }
+          &:hover{
+            opacity: 0.5;
+          }
+        }
+      }
+
+    }
+
+
+    .site-footer {
+      grid-area: site-footer;
+      @extend  %footer-theme;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

@@ -1,44 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title> Welcome screen</title>
-	 <link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<title> D at Harvard | Assignment One </title>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-		<div class="container">
-		  <div class="item"  id="first">
-		      <div class="wrapper">
-		          <div class="box"> 1</div>
-		          <div class="box" id="mid"> 2</div>
-		          <div class="box">3</div>
-		          <div class="box" id="four">4</div>
-		          <div class="box">5</div>
-		          <div class="box">6</div>
-		          <a href="/1" class="box"> 7</a>
-		          <div class="box">8</div>
-		      </div>
-		  </div>
-		  <!-- <div class="item"> </div> -->
-		  <div class="right">
-		    <button id="one">Open</button>
-		    <button id="two">Close</button>
-		  </div>
+<!-- This sets the site Background color -->
+<div id="site-background"></div>
+
+<div class="site-container">
+
+	<section class="site-navigation">
+		<nav>
+			<strong> <a href="/"> Home </a></strong>
+			<strong> <a href="/new"> Search Games </a> </strong>
+			<strong> Sports </strong>
+		</nav>
+	</section>
+
+
+	<section class="site-main-content">
+		<!-- Site Banner Section-->
+		<div class="site-banner">
+			<h2 banner-anouncer-ad>Your number one Online Gaming site</h2>
+			<div class="highlight">
+				<p>Join over 1 million passionate gamers from all corners of the world to play your favorite games on your preferred device. We provide a unique gaming experience that allows you to play with others using devices or consoles different from yours. Grab your first month FREE below </p>
+			</div>
+			<div>
+				<button> Start Free Trial</button>
+				<button> Extras</button>
+			</div>
 		</div>
 
-	<div class="container-grid">
-	    <div class="col-1"> </div>
-	    <div class="col-5"> </div>
-	     <div class="col-1"> </div>
-	     <div class="col-5"> </div>
-	</div>
-	<script type="text/javascript">
-		document.querySelector('#one').addEventListener('click', ()=> {
-		document.querySelector('#first').style.width = "60%";
-		});
+		<!-- Site  Card Content-->
+		<div class="site-info-content">
+				<div class="site-left-content">
+					<div class="top-left-banner-content">
+						<div class="what-new">
+								<h2>WHAT'S NEW</h2>
+						</div>
+						<div class="right-paragraph">
+								<strong class="light-text"> If you are considering a career as professional gamer, We currently offer mentoring and training through pairing with the best  professionsl gamers.</strong>
+						</div>
+					</div>
 
-		document.querySelector('#two').addEventListener('click', ()=> {
-				document.querySelector('#first').style.width = "0%";
-		});
-	</script>
+					<div class="left-content">
+						<h1>Want to Become an Online Gaming Expert?</h1>
+						<div class="bg">
+							<button> Give us a Call Now</button>
+						</div>
+					</div>
+
+					<div class="left-bottom">
+						<h1>Top Gamers</h1>
+						<h3>Loic Alexander, Kyiv, Ukraine</h3>
+						<h3>Jian Woo, Tokyo, Japan</h3>
+						<h3>Matt Shore, Melbourne, Australia</h3>
+						<h3>Mbaaku Akono, Douala, Cameroon</h3>
+					</div>
+
+					<div class="bottom-banner-content">
+						<div class="left-dsh">
+							<div>
+								<h2 class="light-text"> <strong class="text-danger">123, 893,943, 212</strong> Online last week</h2>
+							</div>
+						</div>
+						<div class="right-dsh">
+							<h2 class="light-text"><strong class="text-danger">612, 099, 212, 983</strong> Online last month</h2>
+						</div>
+					</div>
+				</div>
+
+				<div class="site-right-content">
+					<h2>Join Us</h2>
+					<input type="text" placeholder="Your firstname e.g John">
+					<input type="text" placeholder="Your lastname e.g Doe">
+					<input type="text" placeholder="Your primary email">
+					<button>Send</button>
+				</div>
+		</div>
+
+		<!-- Misc Section-->
+		<div class="site-horizontal-section">
+			<div class="left-card-item">
+				<img src="/img/1.jpeg" alt="">
+				<h2>Bali Auto</h2>
+				<p> Bali is an adventure game for people who want to get on a road trip. Join other gamers in this unique experience on some of the most dangerous roads.</p>
+			</div>
+
+			<div class="middle-card-item" banner-anouncer-ad>
+				<img src="/img/2.jpeg" alt="">
+				<h2>Moscow Skating</h2>
+				<p>Do you love Xtreme sports in rocky icy mountains. Moscow is a game that will bring your adrenaline levels to peak. Available only on Playstation VR.</p>
+			</div>
+
+			<div class="right-card-item">
+				<img src="/img/3.jpeg" alt="">
+				<h2>Bamenda Match</h2>
+				<p>Do you rather prefer social gaming. Join millions of single people on the best beaches in the world in a VR environment. Exclusively on Playstation VR. </p>
+			</div>
+
+
+		</div>
+
+	</section>
+
+
+	<section class="site-footer">
+		<strong> &copy 2019 | D at Harvard Extension | Assignment One</strong>
+	</section>
+
+</div>
+
+
 </body>
 </html>
