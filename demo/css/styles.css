@@ -1,6 +1,10 @@
 /**
 Global style rules
  */
+:root {
+  --screen-display: grid;
+}
+
 @keyframes anouncer-ad {
   0% {
     transform: scale(0.5);
@@ -90,11 +94,12 @@ body {
 }
 body div.site-container {
   height: 100%;
-  display: grid;
+  display: var(--screen-display);
   grid-template-columns: 30% auto;
   grid-template-rows: 50px auto 80px;
   grid-template-areas: "nav-bar nav-bar" "site-body site-body" "site-footer site-footer";
-  margin: 0 0;
+  width: calc(100% - 3em);
+  margin: 0 auto;
   grid-gap: 5px;
 }
 body div.site-container .site-navigation {
@@ -118,7 +123,7 @@ body div.site-container .site-navigation nav strong:hover {
 }
 body div.site-container .site-main-content {
   grid-area: site-body;
-  display: grid;
+  display: var(--screen-display);
   grid-template-columns: 30% auto;
   grid-template-rows: 500px auto 400px;
   grid-template-areas: "banner-ad banner-ad" "jumb-content jumb-content" "bottom-section bottom-section";
@@ -147,10 +152,21 @@ body div.site-container .site-main-content .site-banner {
 body div.site-container .site-main-content .site-banner h2 {
   font-size: 3em;
 }
+body div.site-container .site-main-content .site-banner [site-button-group] {
+  display: var(--screen-display);
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-banner [site-button-group] {
+    --screen-display: flex;
+    flex-direction: column;
+  }
+}
 body div.site-container .site-main-content .site-info-content {
   grid-area: jumb-content;
   width: 100%;
-  display: grid;
+  display: var(--screen-display);
   grid-template-columns: 70% 29%;
   grid-template-rows: minmax(400px, auto);
   grid-gap: 15px;
@@ -159,14 +175,24 @@ body div.site-container .site-main-content .site-info-content {
 }
 @media only screen and (max-width: 820px) {
   body div.site-container .site-main-content .site-info-content {
+    --screen-display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  body div.site-container .site-main-content .site-info-content {
     display: flex;
     flex-direction: column;
+    padding-bottom: 12px;
+  }
+  body div.site-container .site-main-content .site-info-content input {
+    margin-bottom: 1em;
   }
 }
 body div.site-container .site-main-content .site-info-content .site-left-content {
   grid-area: left-content;
   background-color: transparent;
-  display: grid;
+  display: var(--screen-display);
   width: 102%;
   grid-template-columns: 50% 50%;
   grid-template-rows: 18% auto 14%;
@@ -174,15 +200,15 @@ body div.site-container .site-main-content .site-info-content .site-left-content
 }
 @media only screen and (max-width: 820px) {
   body div.site-container .site-main-content .site-info-content .site-left-content {
-    display: flex;
+    --screen-display: flex;
     flex-direction: column;
   }
 }
 body div.site-container .site-main-content .site-info-content .site-left-content .top-left-banner-content {
   grid-area: top-left;
-  width: 100%;
+  width: calc(100% - 1em);
   background: #00465c;
-  display: grid;
+  display: var(--screen-display);
   grid-template-columns: 15% 85%;
   grid-template-rows: 100%;
   grid-template-areas: "left-area right-area";
@@ -209,9 +235,10 @@ body div.site-container .site-main-content .site-info-content .site-left-content
   padding-left: 12px;
 }
 body div.site-container .site-main-content .site-info-content .site-left-content .left-content {
-  display: flex;
+  --screen-display: flex;
   flex-direction: column;
   grid-area: middle-left;
+  width: calc(100% - 1em);
 }
 @media only screen and (max-width: 820px) {
   body div.site-container .site-main-content .site-info-content .site-left-content .left-content {
@@ -239,19 +266,32 @@ body div.site-container .site-main-content .site-info-content .site-left-content
   grid-area: middle-right;
   background-color: white;
   height: 20em;
-  display: flex;
+  width: calc(100% - 1em);
+  --screen-display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
+@media only screen and (max-width: 820px) {
+  body div.site-container .site-main-content .site-info-content .site-left-content .left-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  body div.site-container .site-main-content .site-info-content .site-left-content .left-bottom {
+    display: flex;
+  }
+}
 body div.site-container .site-main-content .site-info-content .site-left-content .bottom-banner-content {
   background: #00465c;
   grid-area: bottom-left;
-  display: grid;
+  display: var(--screen-display);
+  width: calc(100% - 1em);
   grid-template-columns: 50% 48%;
 }
 body div.site-container .site-main-content .site-info-content .site-left-content .bottom-banner-content [class$=-dsh] {
-  display: flex;
+  --screen-display: flex;
   flex-direction: column;
   padding-left: 12px;
   text-align: center;
@@ -284,24 +324,30 @@ body div.site-container .site-main-content .site-horizontal-section {
   grid-area: bottom-section;
   background-color: transparent;
   border: 1px solid darkgrey;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
+  display: var(--screen-display);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 100%;
+  padding-right: 10px;
   grid-gap: 12px;
   justify-items: center;
   justify-content: center;
 }
 @media only screen and (max-width: 820px) {
   body div.site-container .site-main-content .site-horizontal-section {
-    display: flex;
+    --screen-display: flex;
     flex-direction: column;
   }
 }
 body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] {
   width: 100%;
-  padding: 0 12px;
-  border-right: 3px solid #8a9292;
+  padding: 12px;
   padding-top: 10px;
+}
+body div.site-container .site-main-content .site-horizontal-section [class$=-card-item]:last-of-type {
+  border-right: none;
+}
+body div.site-container .site-main-content .site-horizontal-section [class$=-card-item]:first-child {
+  padding-top: 12px;
 }
 @media only screen and (max-width: 820px) {
   body div.site-container .site-main-content .site-horizontal-section [class$=-card-item] {
@@ -322,7 +368,7 @@ body div.site-container .site-main-content .site-horizontal-section [class$=-car
 }
 body div.site-container .site-footer {
   grid-area: site-footer;
-  display: flex;
+  --screen-display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,9 @@
 /**
 Global style rules
  */
+:root{
+  --screen-display: grid;
+}
 
 $mobileBreakPoint: 820px;
 
@@ -37,6 +40,18 @@ a{
 
 @mixin mobile {
   @media only screen and (max-width:  #{$mobileBreakPoint})  {
+    @content;
+  }
+}
+
+@mixin touchscreen {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}
+
+@mixin tabletview {
+  @media (min-width: 768px) and (max-width: 1024px) {
     @content;
   }
 }

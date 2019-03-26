@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "node test.js",
-    "build": "sass src/main.scss demo/css/styles.css && sass src/assignment1/*.scss demo/1/css/main.css"
+    "build": "sass src/main.scss demo/css/styles.css && sass src/new.scss demo/new/styles.css"
   },
   "dependencies": {
     "ejs": "^2.5.6",

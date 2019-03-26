@@ -11,7 +11,7 @@ body{
 
   div.site-container {
     height: 100%;
-    display: grid;
+    display: var(--screen-display);
     grid-template-columns: 30% auto;
     grid-template-rows: 50px auto 80px;
     grid-template-areas: "nav-bar nav-bar" "site-body site-body" "site-footer site-footer";
@@ -42,7 +42,7 @@ body{
 
     .site-main-content {
       grid-area: site-body;
-      display: grid;
+      display: var(--screen-display);
       grid-template-columns: 30% auto;
       grid-template-rows: 500px auto;
       grid-template-areas: "banner-ad banner-ad" "jumb-content jumb-content";
@@ -92,7 +92,7 @@ body{
         background-color: darken(map_get($colors, primary-theme), 5%);
         grid-area: jumb-content;
         width: 100%;
-        display: grid;
+        display: var(--screen-display);
         grid-template-columns: repeat(3, 30%);
         grid-template-rows: auto;
         grid-gap: 3em;

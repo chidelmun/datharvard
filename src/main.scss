@@ -10,11 +10,12 @@ body{
 
   div.site-container {
     height: 100%;
-    display: grid;
+    display: var(--screen-display);
     grid-template-columns: 30% auto;
     grid-template-rows: 50px auto 80px;
     grid-template-areas: "nav-bar nav-bar" "site-body site-body" "site-footer site-footer";
-    margin: 0 0;
+    width: calc(100% - 3em);
+    margin: 0 auto;
     grid-gap: 5px;
 
     .site-navigation {
@@ -41,7 +42,7 @@ body{
 
     .site-main-content {
       grid-area: site-body;
-      display: grid;
+      display: var(--screen-display);
       grid-template-columns: 30% auto;
       grid-template-rows: 500px auto 400px;
       grid-template-areas: "banner-ad banner-ad" "jumb-content jumb-content" "bottom-section bottom-section";
@@ -69,12 +70,21 @@ body{
         h2{
           font-size: 3em;
         }
+        [site-button-group] {
+          display: var(--screen-display);
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 30px;
+          @include mobile{
+            --screen-display: flex;
+            flex-direction: column;
+          }
+        }
       }
 
       .site-info-content {
         grid-area: jumb-content;
         width: 100%;
-        display: grid;
+        display: var(--screen-display);
         grid-template-columns: 70% 29%;
         grid-template-rows: minmax(400px, auto);
         grid-gap: 15px;
@@ -82,29 +92,38 @@ body{
         border: 1px solid darkgrey;
 
         @include mobile{
+          --screen-display: flex;
+          flex-direction: column;
+        }
+
+        @include tabletview {
           display: flex;
           flex-direction: column;
+          padding-bottom: 12px;
+          input{
+            margin-bottom: 1em;
+          }
         }
 
         .site-left-content{
           grid-area: left-content;
           background-color: transparent;
-          display: grid;
+          display: var(--screen-display);
           width: 102%;
           grid-template-columns: 50% 50%;
           grid-template-rows: 18% auto 14%;
           grid-template-areas: "top-left top-left" "middle-left middle-right" "bottom-left bottom-left";
 
           @include mobile{
-            display: flex;
+            --screen-display: flex;
             flex-direction: column;
           }
 
           .top-left-banner-content {
             grid-area: top-left;
-            width: 100%;
+            width: calc(100% - 1em);
             background: darken(map_get($colors, primary-theme), 5%);
-            display: grid;
+            display: var(--screen-display);
             grid-template-columns: 15% 85%;
             grid-template-rows: 100%;
             grid-template-areas: "left-area right-area";
@@ -128,9 +147,10 @@ body{
           }
 
           .left-content {
-            display: flex;
+            --screen-display: flex;
             flex-direction: column;
             grid-area: middle-left;
+            width: calc(100% - 1em);
             @include mobile{
               padding-bottom: 12px;
               text-align: center;
@@ -158,19 +178,28 @@ body{
             grid-area: middle-right;
             background-color: lighten(#fffcef, 50%);
             height: 20em;
-            display: flex;
+            width: calc(100% - 1em);
+            --screen-display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+            @include mobile{
+              display: flex;
+              flex-direction: column;
+            }
+            @include tabletview {
+              display: flex;
+            }
           }
 
           .bottom-banner-content {
             background: darken(map_get($colors, primary-theme), 5%);
             grid-area: bottom-left;
-            display: grid;
+            display: var(--screen-display);
+            width: calc(100% - 1em);
             grid-template-columns: 50% 48%;
             [class$="-dsh"] {
-              display: flex;
+              --screen-display: flex;
               flex-direction: column;
               padding-left: 12px;
               text-align: center;
@@ -207,24 +236,30 @@ body{
         grid-area: bottom-section;
         background-color: transparent;
         border: 1px solid darkgrey;
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
+        display: var(--screen-display);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 100%;
+        padding-right: 10px;
         grid-gap: 12px;
         justify: {
           items: center;
           content: center;
         }
         @include mobile {
-          display: flex;
+          --screen-display: flex;
           flex-direction: column;
         }
 
         [class$="-card-item"] {
           width: 100%;
-          padding: 0 12px;
-          border-right: 3px solid #8a9292;
+          padding: 12px;
           padding-top: 10px;
+          &:last-of-type {
+            border-right: none;
+          }
+          &:first-child {
+            padding-top: 12px;
+          }
           @include mobile {
             width: 100%;
             padding: 0 0;
@@ -248,7 +283,7 @@ body{
     .site-footer {
       grid-area: site-footer;
       @extend  %footer-theme;
-      display: flex;
+      --screen-display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
