@@ -8,6 +8,8 @@ $colors: (
         theme-button-colors: purple,
         header-color: hsla(48, 24%, 43%, 1),
         danger-color: hsl(340, 80%, 20%),
+        header-theme-bg-color: #427d8f,
+        header-theme-color: #FFF6BB,
 );
 
 $arrow-size: 65px;
@@ -17,8 +19,8 @@ $arrow-size: 65px;
 }
 
 %header-theme {
-  background-color: #427d8f;
-  color: #FFF6BB;
+  background-color: getColor(header-theme-bg-color);
+  color: getColor(header-theme-color);
 }
 
 %footer-theme {
@@ -32,9 +34,9 @@ body, html {
 }
 
 button{
-  height: 48px;
-  width: 178px;
-  font-size: 1em;
+  height: var(--button-height);
+  width: var(--button-width);
+  font-size: var(--button-size);
   background-color: getColor(theme-button-colors);
   &:hover{
     cursor: pointer;
@@ -43,6 +45,11 @@ button{
   @include mobile {
     margin: 12px 0;
   }
+
+  @include touchscreen {
+   // Set touch behaiviour
+  }
+
 }
 h1,h2,h3,h4,h5,h6 {
   color: getColor(header-color);
@@ -52,6 +59,25 @@ p, strong, a{
   color: lighten(getColor(header-color), 20%);
   font-size: 20px;
 }
+
+
+input {
+    width: var(--input-width);
+    height: 2.5rem;
+    font-size: var(--input-font-size);
+    font-weight: 100;
+    background-color: #fffcef;
+    padding-left: 17px;
+    font-family: none;
+    text-align: left;
+    @include mobile {
+      margin: 12px 0;
+    }
+    @include tabletview {
+      --input-width: 50%;
+      --input-font-size: 2rem;
+    }
+  }
 
 .light-text {
   color: lighten(map-get($colors, header-color), 20%);

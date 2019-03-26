@@ -3,6 +3,12 @@ Global style rules
  */
 :root{
   --screen-display: grid;
+  --button-width: 170px;
+  --button-height: 48px;
+  --button-size: 1em;
+  --input-width: 70%;
+  --input-height: 2.5rem;
+  --input-font-size: 1.5rem;
 }
 
 $mobileBreakPoint: 820px;

@@ -3,6 +3,12 @@ Global style rules
  */
 :root {
   --screen-display: grid;
+  --button-width: 170px;
+  --button-height: 48px;
+  --button-size: 1em;
+  --input-width: 70%;
+  --input-height: 2.5rem;
+  --input-font-size: 1.5rem;
 }
 
 @keyframes anouncer-ad {
@@ -48,9 +54,9 @@ body, html {
 }
 
 button {
-  height: 48px;
-  width: 178px;
-  font-size: 1em;
+  height: var(--button-height);
+  width: var(--button-width);
+  font-size: var(--button-size);
   background-color: purple;
 }
 button:hover {
@@ -62,7 +68,6 @@ button:hover {
     margin: 12px 0;
   }
 }
-
 h1, h2, h3, h4, h5, h6 {
   color: #887d53;
 }
@@ -70,6 +75,28 @@ h1, h2, h3, h4, h5, h6 {
 p, strong, a {
   color: #b7ae8a;
   font-size: 20px;
+}
+
+input {
+  width: var(--input-width);
+  height: 2.5rem;
+  font-size: var(--input-font-size);
+  font-weight: 100;
+  background-color: #fffcef;
+  padding-left: 17px;
+  font-family: none;
+  text-align: left;
+}
+@media only screen and (max-width: 820px) {
+  input {
+    margin: 12px 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  input {
+    --input-width: 50%;
+    --input-font-size: 2rem;
+  }
 }
 
 .light-text {
