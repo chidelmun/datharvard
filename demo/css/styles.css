@@ -195,7 +195,7 @@ body div.site-container .site-main-content {
   grid-area: site-body;
   display: var(--screen-display);
   grid-template-columns: 30% auto;
-  grid-template-rows: 500px auto 600px;
+  grid-template-rows: 500px auto 620px;
   grid-template-areas: "banner-ad banner-ad" "jumb-content jumb-content" "bottom-section bottom-section";
   background-color: transparent;
   margin: 0 0.5em;
