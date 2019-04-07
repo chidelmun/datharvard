@@ -66,6 +66,13 @@ body{
         margin-bottom: 50px;
         border: 1px solid white;
         padding-bottom: 66px;
+        h2{
+          position: relative;
+          top: 2em;
+        }
+        .highlight {
+          padding: 3rem;
+        }
         @extend  %header-theme;
         h2{
           font-size: 3em;
@@ -147,6 +154,7 @@ body{
             flex-direction: column;
             grid-area: middle-left;
             width: calc(100% - 1em);
+            padding: 2rem;
             @include mobile{
               padding-bottom: 12px;
               text-align: center;
@@ -175,12 +183,11 @@ body{
             background-color: lighten(#fffcef, 50%);
             height: 20em;
             width: calc(100% - 1em);
-            --screen-display: flex;
+            display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
             @include mobile{
-              display: flex;
               flex-direction: column;
             }
             @include tabletview {
@@ -269,7 +276,7 @@ body{
     .site-footer {
       grid-area: site-footer;
       @extend  %footer-theme;
-      --screen-display: flex;
+      display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;

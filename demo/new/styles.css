@@ -21,10 +21,16 @@ Global style rules
 }
 [banner-anouncer-ad] {
   animation: anouncer-ad 2s;
+  font-family: "Times New Roman", Georgia;
 }
 
 a {
   text-decoration: none;
+  font-family: "Times New Roman", Georgia !important;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+  font-family: "Times New Roman", Georgia;
 }
 
 @keyframes blink {
@@ -75,6 +81,9 @@ h1, h2, h3, h4, h5, h6 {
 p, strong, a {
   color: #b7ae8a;
   font-size: 20px;
+  line-height: 1.5em;
+  letter-spacing: 1.5px;
+  font-family: Arial;
 }
 
 input {
