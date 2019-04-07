@@ -7,6 +7,9 @@ body{
   background-color: getColor(primary-theme);
   position: absolute;
   z-index: -1;
+  @include mobile{
+    --base-text-size: 1.2rem;
+  }
 
   div.site-container {
     height: 100%;
@@ -44,14 +47,14 @@ body{
       grid-area: site-body;
       display: var(--screen-display);
       grid-template-columns: 30% auto;
-      grid-template-rows: 500px auto 400px;
+      grid-template-rows: 500px auto 600px;
       grid-template-areas: "banner-ad banner-ad" "jumb-content jumb-content" "bottom-section bottom-section";
       background-color: transparent;
       margin: 0 0.5em;
       grid-gap: 0.75em;
 
       @include mobile{
-        display: flex;
+        --screen-display: flex;
         flex-direction: column;
       }
 
@@ -74,13 +77,14 @@ body{
           padding: 3rem;
         }
         @extend  %header-theme;
-        h2{
-          font-size: 3em;
-        }
         [site-button-group] {
           display: var(--screen-display);
           grid-template-columns: 1fr 1fr;
           grid-gap: 30px;
+          @include mobile{
+            --screen-display: flex;
+            flex-direction: column;
+          }
         }
       }
 
@@ -93,7 +97,7 @@ body{
         grid-gap: 15px;
         grid-template-areas: "left-content right-content";
         border: 1px solid darkgrey;
-
+        padding-bottom: var(--bottom-padding, 0px);
         @include mobile{
           --screen-display: flex;
           flex-direction: column;
@@ -102,7 +106,7 @@ body{
         @include tabletview {
           display: flex;
           flex-direction: column;
-          padding-bottom: 12px;
+          --bottom-padding: 12px;
           input{
             margin-bottom: 1em;
           }
@@ -132,17 +136,21 @@ body{
             grid-template-areas: "left-area right-area";
             align-items: baseline;
             @include mobile{
-              grid-template-columns: 26% 65%;
+              --screen-display: flex;
+              flex-direction: column;
             }
             .right-paragraph{
               grid-area: right-area;
               width: 100%;
+              padding-left: 25px;
+              padding-bottom: 3rem;
               text-align: left;
               @include mobile {
                 padding-left: 12px;
               }
             }
             .what-new{
+              font-size: var(--medium-text-size);
               grid-area: left-area;
               width: 100%;
               padding-left: 12px;
@@ -174,14 +182,13 @@ body{
               }
             }
             h1{
-              font-size: 2.5em;
+              padding: 0px 14px;
             }
           }
 
           .left-bottom{
             grid-area: middle-right;
             background-color: lighten(#fffcef, 50%);
-            height: 20em;
             width: calc(100% - 1em);
             display: flex;
             flex-direction: column;
@@ -202,10 +209,12 @@ body{
             width: calc(100% - 1em);
             grid-template-columns: 50% 48%;
             [class$="-dsh"] {
+              padding-left: 12px;
               --screen-display: flex;
               flex-direction: column;
-              padding-left: 12px;
               text-align: center;
+              position: relative;
+              bottom: 20%;
             }
           }
 
@@ -233,6 +242,7 @@ body{
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 100%;
         padding-right: 10px;
+        margin-top: 25px;
         grid-gap: 12px;
         justify: {
           items: center;

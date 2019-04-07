@@ -31,12 +31,13 @@ $arrow-size: 65px;
 
 body, html {
   height: 100%;
+  font-size: var(--base-text-size);
 }
 
 button{
   height: var(--button-height);
   width: var(--button-width);
-  font-size: var(--button-size);
+  font-size: calc(var(--base-text-size) * 1.25);
   background-color: getColor(theme-button-colors);
   &:hover{
     cursor: pointer;
@@ -60,7 +61,7 @@ p, strong, a{
   font-size: 20px;
   line-height: 1.5em;
   letter-spacing: 1.5px;
-  font-family:  Arial;
+  font-family:  Arial, Helvetica;;
 }
 
 
@@ -71,7 +72,7 @@ input {
     font-weight: 100;
     background-color: #fffcef;
     padding-left: 17px;
-    font-family: none;
+    font-family: Arial, Helvetica;;
     text-align: left;
     @include mobile {
       margin: 12px 0;

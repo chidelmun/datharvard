@@ -9,6 +9,10 @@ Global style rules
   --input-width: 70%;
   --input-height: 2.5rem;
   --input-font-size: 1.5rem;
+  --bottom-padding: 0px;
+  --base-text-size: 1rem;
+  --medium-text-size: calc(var(base-text-size) * 2);
+  --large-text-size: calc(var(--base-text-size) * 3);
 }
 
 $mobileBreakPoint: 820px;
@@ -32,8 +36,32 @@ a{
   font-family: "Times New Roman", Georgia !important;
 }
 
+
 h1, h2, h3, h4, h5, h6, button {
   font-family: "Times New Roman", Georgia;
+}
+
+h1{
+  font-size: var(--large-text-size);
+}
+h2 {
+  font-size: var(--medium-text-size);
+}
+
+h3{
+  font-size: var(--medium-text-size);
+}
+
+[text-large]{
+  font-size: var(--large-text-size);
+}
+
+[text-medium]{
+  font-size: calc(var(--base-text-size) * 2);
+}
+
+[text-base]{
+  font-size: var(--base-text-size);
 }
 
 

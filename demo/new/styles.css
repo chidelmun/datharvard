@@ -9,6 +9,10 @@ Global style rules
   --input-width: 70%;
   --input-height: 2.5rem;
   --input-font-size: 1.5rem;
+  --bottom-padding: 0px;
+  --base-text-size: 1rem;
+  --medium-text-size: calc(var(base-text-size) * 2);
+  --large-text-size: calc(var(--base-text-size) * 3);
 }
 
 @keyframes anouncer-ad {
@@ -31,6 +35,30 @@ a {
 
 h1, h2, h3, h4, h5, h6, button {
   font-family: "Times New Roman", Georgia;
+}
+
+h1 {
+  font-size: var(--large-text-size);
+}
+
+h2 {
+  font-size: var(--medium-text-size);
+}
+
+h3 {
+  font-size: var(--medium-text-size);
+}
+
+[text-large] {
+  font-size: var(--large-text-size);
+}
+
+[text-medium] {
+  font-size: calc(var(--base-text-size) * 2);
+}
+
+[text-base] {
+  font-size: var(--base-text-size);
 }
 
 @keyframes blink {
@@ -57,12 +85,13 @@ body div.site-container .site-footer {
 
 body, html {
   height: 100%;
+  font-size: var(--base-text-size);
 }
 
 button {
   height: var(--button-height);
   width: var(--button-width);
-  font-size: var(--button-size);
+  font-size: calc(var(--base-text-size) * 1.25);
   background-color: purple;
 }
 button:hover {
@@ -83,7 +112,7 @@ p, strong, a {
   font-size: 20px;
   line-height: 1.5em;
   letter-spacing: 1.5px;
-  font-family: Arial;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 input {
@@ -93,7 +122,7 @@ input {
   font-weight: 100;
   background-color: #fffcef;
   padding-left: 17px;
-  font-family: none;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: left;
 }
 @media only screen and (max-width: 820px) {
